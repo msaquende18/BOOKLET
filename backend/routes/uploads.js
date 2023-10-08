@@ -16,7 +16,7 @@ const upload = multer({ storage });
 
 // /api/upload
 router.post("/", upload.single("image"), (req, res) => {
-  res.status(200).json({ message: "image uploaded" });
+  res.status(200).json({ message: "imagem carregada com sucesso" });
 });
 
 module.exports = router;
