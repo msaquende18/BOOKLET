@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { verifyTokenAndAdmin } = require("../middlewares/verifyToken");
+const { verifyTokenAndAdmin } = require("../middleware/verifyToken");
 
 const { verTodosLivros, cadastarLivro, verLivroById, actualizarLivro, eliminarLivro } = require("../controller/livroController");
 

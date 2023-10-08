@@ -35,7 +35,7 @@ const port = process.env.PORT || 8000;
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/usuarios", require("./routes/usuarios"));
 app.use("/api/autores", require("./routes/autor"));
-app.use("/api/livros", require("./routes/livros"));
+app.use("/api/livros", require("./routes/livro"));
 
 
 

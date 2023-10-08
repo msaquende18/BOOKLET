@@ -1,9 +1,5 @@
 const asyncHandler = require("express-async-handler");
-const {
-  validateCreateBook,
-  validateUpdateBook,
-  Book,
-} = require("../models/Book");
+
 const { Livro, validarCadastrarLivro, validarActualizarLivro } = require("../models/Livros");
 
 /**
