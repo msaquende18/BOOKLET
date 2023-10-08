@@ -69,7 +69,7 @@ module.exports.verUsuarioById = asyncHandler(async (req, res) => {
 module.exports.eliminarUsuario = asyncHandler(async (req, res) => {
   const usuario = await Usuario.findById(req.params.id).select("-password");
   if (usuario) {
-    await usuario.findByIdAndDelete(req.params.id);
+    await Usuario.findByIdAndDelete(req.params.id);
     res.status(200).json({ message: "Usuário eliminado com sucesso!" });
   } else {
     res.status(404).json({ message: "Usuário não encontrado" });

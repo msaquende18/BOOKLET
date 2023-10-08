@@ -42,33 +42,33 @@ module.exports.cadastrar = asyncHandler(async (req, res) => {
 
 
 /**
- *  @desc    Login User
+ *  @desc    Login Usuário
  *  @route   /api/auth/login
  *  @method  POST
  *  @access  public
  */
 module.exports.login = asyncHandler(async (req, res) => {
-  const { error } = validateLoginUser(req.body);
+  const { error } = validarLoginUsuario(req.body);
   if (error) {
     return res.status(400).json({ message: error.details[0].message });
   }
 
-  let user = await User.findOne({ email: req.body.email });
-  if (!user) {
-    return res.status(400).json({ message: "invalid email or password" });
+  let usuario = await Usuario.findOne({ email: req.body.email });
+  if (!usuario) {
+    return res.status(400).json({ message: "Email ou Palavra Passe inválido" });
   }
 
   const isPasswordMatch = await bcrypt.compare(
     req.body.password,
-    user.password
+    usuario.password
   );
 
   if (!isPasswordMatch) {
-    return res.status(400).json({ message: "invalid email or password" });
+    return res.status(400).json({ message: "Email ou Palavra Passe inválido" });
   }
-  const token = user.generateToken();
+  const token = usuario.generateToken();
 
-  const { password, ...other } = user._doc;
+  const { password, ...other } = usuario._doc;
 
   res.status(200).json({ ...other, token });
 });

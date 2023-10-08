@@ -16,6 +16,7 @@ function verificarToken(req, res, next) {
   }
 }
 
+
 // Verificar Token & Autorizar usuario
 function verificarTokenEAutorizacao(req, res, next) {
   verificarToken(req, res, () => {
