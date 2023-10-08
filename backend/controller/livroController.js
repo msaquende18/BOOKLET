@@ -4,7 +4,7 @@ const {
   validateUpdateBook,
   Book,
 } = require("../models/Book");
-const { Livro, validarCadastrarLivro } = require("../models/Livros");
+const { Livro, validarCadastrarLivro, validarActualizarLivro } = require("../models/Livros");
 
 /**
  *  @desc    Ver Todos Livros
@@ -45,10 +45,10 @@ const verLivroById = asyncHandler(async (req, res) => {
 });
 
 /**
- *  @desc    Create new book
- *  @route   /api/books
+ *  @desc    Cadastrar novo livro
+ *  @route   /api/livros
  *  @method  POST
- *  @access  private (only admin)
+ *  @access  private (so admin)
  */
 const cadastarLivro = asyncHandler(async (req, res) => {
   const { error } = validarCadastrarLivro(req.body);
@@ -70,55 +70,55 @@ const cadastarLivro = asyncHandler(async (req, res) => {
 });
 
 /**
- *  @desc    Update a book
- *  @route   /api/books/:id
+ *  @desc    Actualizar  livro
+ *  @route   /api/livros/:id
  *  @method  PUT
- *  @access  private (only admin)
+ *  @access  private (so admin)
  */
-const updateBook = asyncHandler(async (req, res) => {
-  const { error } = validateUpdateBook(req.body);
+const actualizarLivro = asyncHandler(async (req, res) => {
+  const { error } = validarActualizarLivro(req.body);
 
   if (error) {
     return res.status(400).json({ message: error.details[0].message });
   }
 
-  const updatedBook = await Book.findByIdAndUpdate(
+  const actualizarLivro = await Livro.findByIdAndUpdate(
     req.params.id,
     {
       $set: {
-        title: req.body.title,
-        author: req.body.author,
-        description: req.body.description,
-        price: req.body.price,
-        cover: req.body.cover,
+        titulo: req.body.titulo,
+        autor: req.body.autor,
+        descricao: req.body.descricao,
+        preco: req.body.preco,
+        imagemLivro: req.body.imagemLivro,
       },
     },
     { new: true }
   );
 
-  res.status(200).json(updatedBook);
+  res.status(200).json(actualizarLivro);
 });
 
 /**
- *  @desc    Delete a book
- *  @route   /api/books/:id
+ *  @desc    Eliminar livro
+ *  @route   /api/livro/:id
  *  @method  DELETE
- *  @access  private (only admin)
+ *  @access  private (so admin)
  */
-const deleteBook = asyncHandler(async (req, res) => {
-  const book = await Book.findById(req.params.id);
-  if (book) {
-    await Book.findByIdAndDelete(req.params.id);
-    res.status(200).json({ message: "book has been deleted" });
+const eliminarLivro = asyncHandler(async (req, res) => {
+  const livro = await Livro.findById(req.params.id);
+  if (livro) {
+    await Livro.findByIdAndDelete(req.params.id);
+    res.status(200).json({ message: "Livro eliminado com sucesso!" });
   } else {
-    res.status(404).json({ message: "book not found" });
+    res.status(404).json({ message: "Livro não encontrado" });
   }
 });
 
 module.exports = {
-  getAllBooks,
-  getBookById,
-  createBook,
-  updateBook,
-  deleteBook,
+  verTodosLivros,
+  verLivroById,
+  cadastarLivro,
+  actualizarLivro,
+  eliminarLivro,
 };
