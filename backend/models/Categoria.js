@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
 
-// Category Schema
+// Categoria Schema
 const CategoriaSchema = new mongoose.Schema(
   {
     livro: {

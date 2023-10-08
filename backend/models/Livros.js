@@ -1,6 +1,27 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
 
+// Avaliar
+const reviewSchema = mongoose.Schema(
+  {
+    usuario: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Usuario",
+      required: true,
+    },
+    rating: { type: Number, required: true },
+    commentario: { type: String, required: true },
+    livro: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Livro",
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
 // Livro Scheama
 const LivroSchema = new mongoose.Schema(
   {
@@ -31,7 +52,19 @@ const LivroSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    reviews: [reviewSchema],
+    rating: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
+    numReviews: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
   },
+
   { timestamps: true }
 );
 
