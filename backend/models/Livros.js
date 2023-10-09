@@ -7,14 +7,12 @@ const reviewSchema = mongoose.Schema(
     usuario: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Usuario",
-      required: true,
     },
-    rating: { type: Number, required: true },
-    commentario: { type: String, required: true },
+    rating: { type: Number, default: 0 },
+    descricao: { type: String },
     livro: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Livro",
-      required: true,
     },
   },
   {
@@ -55,12 +53,10 @@ const LivroSchema = new mongoose.Schema(
     reviews: [reviewSchema],
     rating: {
       type: Number,
-      required: true,
       default: 0,
     },
     numReviews: {
       type: Number,
-      required: true,
       default: 0,
     },
   },
