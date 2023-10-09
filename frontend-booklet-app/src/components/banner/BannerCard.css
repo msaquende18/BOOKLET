@@ -1,0 +1,28 @@
+.banner .swiper {
+    width: 240px;
+    height: 320px;
+}
+
+.banner .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.banner .swiper-slide:nth-child(1n){
+background-image: url('../../assets/banner-slide/booklet01.jpeg');
+}
+
+.banner .swiper-slide:nth-child(2n) {
+    background-image: url('../../assets/banner-slide/booklet02.jpeg');
+}
+.banner .swiper-slide:nth-child(3n) {
+    background-image: url('../../assets/banner-slide/booklet03.jpeg');
+}
+.banner .swiper-slide:nth-child(4n) {
+background-image: url('../../assets/banner-slide/booklet04.jpeg');
+}
