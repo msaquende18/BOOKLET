@@ -72,7 +72,7 @@ const Navbar = () => {
           {/** Logo */}
           <Link
             to="/"
-            className="text-2x1 font-bold text-blue-700 flex items-center gap-2"
+            className="text-2xl font-bold text-blue-700 flex items-center gap-2"
           >
             Booklet
           </Link>

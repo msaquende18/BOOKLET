@@ -6,7 +6,7 @@ const Banner = () => {
     <div className="px-4 lg:px-24 bg-teal-100 flex items-center ">
       <div className="flex w-full flex-col md:flex-row justify-between items-center gap-12 py-40 ">
         <div className="md:w-1/2 space-y-8 h-full ">
-          <h2 className="text-5x1 font-bold leading-snug text-black ">
+          <h2 className="text-5xl font-bold leading-snug text-black ">
             Ler e Vender Livros Nunca Foi Tão Fácil {" "}
             <span className="text-blue-700">
               Os Melhores Livros, com os preços melhores preços
