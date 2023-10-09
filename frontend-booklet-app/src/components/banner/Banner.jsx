@@ -3,7 +3,7 @@ import BannerCard from './BannerCard';
 
 const Banner = () => {
   return (
-    <div className="px-4 lg:px-24 bg-teal-100 flex items-center ">
+    <div className="px-4 lg:px-24 bg-white flex items-center ">
       <div className="flex w-full flex-col md:flex-row justify-between items-center gap-12 py-40 ">
         <div className="md:w-1/2 space-y-8 h-full ">
           <h2 className="text-5xl font-bold leading-snug text-black ">
@@ -12,24 +12,24 @@ const Banner = () => {
               Os Melhores Livros, com os preços melhores preços
               </span>
           </h2>
-          <p className="md:w-4/5">Paragráfo Aqui</p>
+        
           <div>
             <input
               type="pesquisar"
               name="pesquisar"
               id="pesquisar"
               placeholder="pesquisar livro"
-              className="py-2 px-2 rounded-s-sm outline-none"
+              className="py-2 px-2 rounded-s-sm outline-double "
             />
-            <button className="bg-blue-700 px-6 py-2 text-white font-medium hover:bg-black transition-all ease-in duration-200">
+            <button className="bg-blue-700 px-7 py-2.5 rounded-s-sm text-white font-medium hover:bg-black transition-all ease-in duration-200">
               Pesquisar
             </button>
           </div>
         </div>
 
-        <div>
+        {/* <div>
             <BannerCard />
-        </div>
+        </div> */}
       </div>
     </div>
   );

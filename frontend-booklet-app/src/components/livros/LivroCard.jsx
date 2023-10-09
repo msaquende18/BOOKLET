@@ -10,6 +10,8 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
+import { FaCartShopping } from "react-icons/fa6";
 
 const LivroCard = ({headline, livros}) => {
   return (
@@ -43,15 +45,24 @@ const LivroCard = ({headline, livros}) => {
           modules={[Pagination]}
           className="mySwiper"
         >
-          <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-          <SwiperSlide>Slide 8</SwiperSlide>
-          <SwiperSlide>Slide 9</SwiperSlide>
+          {livros.map((livro) => (
+            <SwiperSlide key={livro._id}>
+              <Link to="/">
+              <div className="relative">
+                <img src={livro.imagemLivro} alt="Imagens Livros" />
+                <div className="absolute top-3 right-3 bg-blue-600 hover:bg-black p-2 rounded" >
+                    <FaCartShopping className="w-4 h-4 text-white" />
+                </div>
+              </div>
+                <div>
+                    <h3>{livro.titulo}</h3>
+                </div>
+                <div>
+                    <p>{livro.preco}</p>
+                </div>
+              </Link>          
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
