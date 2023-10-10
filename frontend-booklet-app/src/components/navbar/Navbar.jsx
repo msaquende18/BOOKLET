@@ -47,10 +47,6 @@ const Navbar = () => {
        path: "/admin/dashboard",
      },
      {
-       link: "Shop",
-       path: "/shop",
-     },
-     {
        link: "Contactos",
        path: "/contactos",
      },
@@ -83,6 +79,7 @@ const Navbar = () => {
             {navItems.map(({ link, path }) => (
               <Link
                 key={path}
+                to={path}
                 className="block text-base text-black uppercase cursor-pointer hover:text-blue-700 "
               >
                 {link}

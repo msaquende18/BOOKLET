@@ -14,6 +14,7 @@ const PromocaoBanner = () => {
           </button>
         </Link>
       </div>
+      
     </div>
   );
 }
