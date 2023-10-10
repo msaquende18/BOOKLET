@@ -25,7 +25,7 @@ const AdSidebar = () => {
       </Sidebar.Logo>
       <Sidebar.Items>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={HiChartPie}>
+          <Sidebar.Item href="/admin/dashboard" icon={HiChartPie}>
             <p>Dashboard</p>
           </Sidebar.Item>
           <Sidebar.Collapse icon={HiShoppingBag} label="E-commerce">
@@ -34,7 +34,7 @@ const AdSidebar = () => {
             <Sidebar.Item href="#">Reembolsos</Sidebar.Item>
             <Sidebar.Item href="#">Entregas</Sidebar.Item>
           </Sidebar.Collapse>
-          <Sidebar.Item href="#" icon={HiInbox}>
+          <Sidebar.Item href="/admin/dashboard/gerenciar-livros" icon={HiInbox}>
             <p>Gerenciar Livros</p>
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiUser}>
@@ -43,14 +43,20 @@ const AdSidebar = () => {
           <Sidebar.Item href="#" icon={HiShoppingBag}>
             <p>Loja</p>
           </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiArrowSmRight}>
-            <p>Login</p>
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={HiTable}>
+          <Sidebar.Item href="/registar-autor" icon={HiTable}>
             <p>Registar</p>
           </Sidebar.Item>
+          <Sidebar.Item href="/login" icon={HiArrowSmRight}>
+            <p>Login</p>
+          </Sidebar.Item>
+          <Sidebar.Item href="/logout" icon={HiTable}>
+            <p>Sair</p>
+          </Sidebar.Item>
 
-          <Sidebar.Item href="#" icon={HiOutlineCloudUpload}>
+          <Sidebar.Item
+            href="/admin/dashboard/upload"
+            icon={HiOutlineCloudUpload}
+          >
             <p>upload</p>
           </Sidebar.Item>
 
