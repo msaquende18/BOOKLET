@@ -9,7 +9,7 @@ const Livros = () => {
   useEffect(() => {
     fetch("http://localhost:9000/api/livros")
       .then((res) => res.json())
-      .then((data) => setLivros(data));
+      .then((data) => setLivros(data.slice(0, 8)));
   }, [])
   return (
     <div>

@@ -9,7 +9,6 @@ const {
   verTodosAutores,
   cadastrarAutor,
 } = require("../controller/autorController");
-const { verificarTokenEAdmin } = require("../middleware/verificarToken");
 const { verifyTokenAndAdmin } = require("../middleware/verifyToken");
 
 // /api/autores

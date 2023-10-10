@@ -1,5 +1,6 @@
 import React from 'react'
 import BannerCard from './BannerCard';
+import imgLivro from '../../assets/livro-favorito/livro.png'
 
 const Banner = () => {
   return (
@@ -25,6 +26,10 @@ const Banner = () => {
               Pesquisar
             </button>
           </div>
+        </div>
+
+        <div>
+            <img src={imgLivro} alt='' />
         </div>
 
         {/* <div>

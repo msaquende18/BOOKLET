@@ -7,7 +7,6 @@ const {
 } = require("../controller/usuarioController");
 const router = express.Router();
 
-const { verificarTokenEAutorizacao, verificarTokenEAdmin } = require("../middleware/verificarToken");
 const { verifyTokenAndAdmin, verifyTokenAndAuthorization } = require("../middleware/verifyToken");
 
 // /api/usuarios
@@ -17,7 +16,7 @@ router.get("/", verifyTokenAndAdmin, verTodosUsuarios);
 router
   .route("/:id")
   .put(verifyTokenAndAuthorization, actualizarUsuario)
-  .get(verifyTokenAndAuthorization, verUsuarioById)
+  .get(verUsuarioById)
   .delete(verifyTokenAndAuthorization, eliminarUsuario);
 
 module.exports = router;

@@ -5,6 +5,7 @@ import Shop from "../components/shop/Shop";
 import Livros from "../components/livros/Livros";
 import Contactos from "../components/contactos/Contactos";
 import Sobre from "../components/sobre/Sobre";
+import LivroDetail from "../components/livros/LivroDetail";
 
 
 const router = createBrowserRouter([
@@ -12,7 +13,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      
       {
         path: "/",
         element: <Home />,
@@ -28,6 +28,11 @@ const router = createBrowserRouter([
       {
         path: "/contactos",
         element: <Contactos />,
+      },
+      {
+        path: "/livros/:id",
+        element: <LivroDetail />,
+        loader: ({ params }) => fetch(`http://localhost:9000/api/livros${params.id}`),
       },
       {
         path: "/sobre",

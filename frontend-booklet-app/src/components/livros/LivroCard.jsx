@@ -47,7 +47,7 @@ const LivroCard = ({headline, livros}) => {
         >
           {livros.map((livro) => (
             <SwiperSlide key={livro._id}>
-              <Link to="/">
+              <Link to={`/livros/${livro._id}`}>
               <div className="relative">
                 <img src={livro.imagemLivro} alt="Imagens Livros" />
                 <div className="absolute top-3 right-3 bg-blue-600 hover:bg-black p-2 rounded" >
@@ -58,7 +58,7 @@ const LivroCard = ({headline, livros}) => {
                     <h3>{livro.titulo}</h3>
                 </div>
                 <div>
-                    <p>{livro.preco}</p>
+                    <p>{livro.preco}{"kz"}</p>
                 </div>
               </Link>          
             </SwiperSlide>
