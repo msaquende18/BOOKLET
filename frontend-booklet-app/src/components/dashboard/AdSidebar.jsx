@@ -21,7 +21,7 @@ const AdSidebar = () => {
   return (
     <Sidebar aria-label="Sidebar with multi-level dropdown example">
       <Sidebar.Logo href="#" img={imagemUsuario} imgAlt="Foto Admin">
-        <p>Booklet Admin Panel</p>
+        <p>Booklet</p>
       </Sidebar.Logo>
       <Sidebar.Items>
         <Sidebar.ItemGroup>

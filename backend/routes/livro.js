@@ -5,13 +5,13 @@ const { verifyTokenAndAdmin } = require("../middleware/verifyToken");
 const { verTodosLivros, cadastarLivro, verLivroById, actualizarLivro, eliminarLivro } = require("../controller/livroController");
 
 // /api/books
-router.route("/").get(verTodosLivros).post(verifyTokenAndAdmin, cadastarLivro);
+router.route("/").get(verTodosLivros).post(cadastarLivro);
 
 // /api/books/:id
 router
   .route("/:id")
   .get(verLivroById)
-  .put(verifyTokenAndAdmin, actualizarLivro)
-  .delete(verifyTokenAndAdmin, eliminarLivro);
+  .put( actualizarLivro)
+  .delete(eliminarLivro);
 
 module.exports = router;
