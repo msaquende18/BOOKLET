@@ -90,8 +90,16 @@ const Navbar = () => {
           {/** Btn para dispositivos grandes */}
 
           <div className="space-x-12 hidden lg:flex items-center ">
+            <Link to="/login">
+              <button
+                class=" uppercase text-sm font-bold tracking-wide bg-blue-900 text-gray-100 p-2 rounded-lg w-full 
+                      focus:outline-none focus:shadow-outline"
+              >
+                Login
+              </button>
+            </Link>
             <button>
-              <FaBarsStaggered className="w-5 hover:text-blue-700" />
+              <FaBarsStaggered className="md:hidden w-5 hover:text-blue-700" />
             </button>
           </div>
 
