@@ -28,18 +28,19 @@ const EditarLivros = () => {
     };
     console.log(livroObj);
 
-    fetch("http://localhost:9000/api/livros", {
-      method: "POST",
+    fetch(`http://localhost:9000/api/livros/${id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(livroObj),
-    }).then((res) =>
-      res.json().then((data) => {
+      body: JSON.stringify(EditarLivros),
+    })
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
-        alert("Livro Editado Com Sucesso!!");
-      })
-    );
+        alert("Livro actualizado com sucesso!!");
+        formulario.reset();
+      });
   };
 
   return (
@@ -58,7 +59,6 @@ const EditarLivros = () => {
             <TextInput
               id="titulo"
               placeholder="Título do livro"
-              required
               type="titulo"
               defaultValue={titulo}
             />
@@ -71,8 +71,9 @@ const EditarLivros = () => {
             <TextInput
               id="autor"
               placeholder="ID do autor"
-              required
+             
               type="autor"
+
             />
           </div>
 
@@ -94,9 +95,10 @@ const EditarLivros = () => {
               <Label htmlFor="imagemLivro" value="Imagem Livro" />
             </div>
             <TextInput
+              defaultValue={imagemLivro}
               id="imagemLivro"
               placeholder="Link Imagem"
-              required
+            
               type="imagemLivro"
             />
           </div>
@@ -104,7 +106,7 @@ const EditarLivros = () => {
             <div className="mb-2 block">
               <Label htmlFor="preco" value="Preço" />
             </div>
-            <TextInput id="preco" placeholder="Preço" required type="preco" />
+            <TextInput id="preco" placeholder="Preço"  type="preco" />
           </div>
         </div>
         <div className="flex gap-8">
@@ -115,7 +117,7 @@ const EditarLivros = () => {
             <Textarea
               id="descricao"
               placeholder=" Descrição do livro..."
-              required
+           
               rows={6}
             />
           </div>

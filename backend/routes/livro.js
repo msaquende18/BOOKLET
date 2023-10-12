@@ -11,7 +11,7 @@ router.route("/").get(verTodosLivros).post(cadastarLivro);
 router
   .route("/:id")
   .get(verLivroById)
-  .put( actualizarLivro)
+  .put(actualizarLivro)
   .delete(eliminarLivro);
 
 module.exports = router;

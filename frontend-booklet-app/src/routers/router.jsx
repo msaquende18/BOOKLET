@@ -11,6 +11,8 @@ import Dashboad from "../components/dashboard/Dashboad";
 import UploadLivro from "../components/dashboard/UploadLivro";
 import GerenciarLivros from "../components/dashboard/GerenciarLivros";
 import EditarLivros from "../components/dashboard/EditarLivros";
+import Registar from "../components/Auth/registar/Registar";
+import Login from "../components/Auth/login/Login";
 
 
 const router = createBrowserRouter([
@@ -69,6 +71,14 @@ const router = createBrowserRouter([
           fetch(`http://localhost:9000/api/livros${params.id}`),
       },
     ],
+  },
+  {
+    path: "/registar",
+    element: <Registar />,
+  },
+  {
+    path: "/login",
+    element: <Login/>,
   },
 ]);
 
