@@ -1,5 +1,7 @@
 Projecto Booklet -> Livraria 
 
+Este é um projecto para vendas de livros online.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
