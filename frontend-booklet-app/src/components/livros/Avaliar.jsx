@@ -221,7 +221,7 @@ const Avaliar = () => {
                   rounded
                   className="w-10 mb-4"
                 />
-                <h5 className="text-lg font-medium">Mauro Bento</h5>
+                <h5 className="text-lg font-medium">Saquende Jr.</h5>
                 <p className="text-base">CEO, KIBIDI LDA</p>
               </div>
             </div>
