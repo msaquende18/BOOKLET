@@ -1,4 +1,4 @@
-Projecto Booklet -> Livraria 
+Projecto Booklet -> Livraria Online 
 
 Este é um projecto para vendas de livros online.
 
