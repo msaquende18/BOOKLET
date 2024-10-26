@@ -32,10 +32,10 @@ module.exports.cadastrar = asyncHandler(async (req, res) => {
     password: req.body.password,
   });
 
-  const result = await usuario.save();
+  const resultado = await usuario.save();
   const token = usuario.generateToken();
 
-  const { password, ...other } = result._doc;
+  const { password, ...other } = resultado._doc;
 
   res.status(201).json({ ...other, token });
 });
