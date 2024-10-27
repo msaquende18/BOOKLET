@@ -95,6 +95,8 @@ const actualizarLivro = asyncHandler(async (req, res) => {
   res.status(200).json(actualizarLivro);
 });
 
+const verLivrosAleatorios = asyncHandler(async (req, res) => {});
+
 /**
  *  @desc    Eliminar livro
  *  @route   /api/livro/:id
@@ -110,6 +112,8 @@ const eliminarLivro = asyncHandler(async (req, res) => {
     res.status(404).json({ message: "Livro não encontrado" });
   }
 });
+
+
 
 module.exports = {
   verTodosLivros,
