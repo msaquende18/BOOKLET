@@ -97,6 +97,9 @@ const actualizarLivro = asyncHandler(async (req, res) => {
 
 const verLivrosAleatorios = asyncHandler(async (req, res) => {});
 
+const LivrosCode = asyncHandler(async (req, res) => {});
+
+
 /**
  *  @desc    Eliminar livro
  *  @route   /api/livro/:id
