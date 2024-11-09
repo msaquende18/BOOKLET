@@ -4,7 +4,13 @@ const { verifyTokenAndAdmin } = require("../middleware/verifyToken");
 
 const { verTodosLivros, cadastarLivro, verLivroById, actualizarLivro, eliminarLivro } = require("../controller/livroController");
 
+const { verTodosLivros, cadastarLivro, verLivroById, actualizarLivro, eliminarLivro } = require("../controller/livroController");
+
 // /api/books
+
+// /api/books
+
+
 router.route("/").get(verTodosLivros).post(cadastarLivro);
 
 // /api/books/:id
