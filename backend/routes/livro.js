@@ -2,11 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { verifyTokenAndAdmin } = require("../middleware/verifyToken");
 
-const { verTodosLivros, cadastarLivro, verLivroById, actualizarLivro, eliminarLivro } = require("../controller/livroController");
-
-const { verTodosLivros, cadastarLivro, verLivroById, actualizarLivro, eliminarLivro } = require("../controller/livroController");
-
-// /api/books
+const { verTodosLivros, cadastarLivro, verLivroById, actualizarLivro, eliminar Livro, verOutrosLivros } = require("../controller/livroController");
 
 // /api/books
 
