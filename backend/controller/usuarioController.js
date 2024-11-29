@@ -45,6 +45,11 @@ module.exports.verTodosUsuarios = asyncHandler(async (req, res) => {
   res.status(200).json(usuarios);
 });
 
+module.exports.testSeen = asyncHandler(async (req, res) => {
+  const usuarios = await Usuario.find().select("-password");
+  res.status(200).json(usuarios);
+});
+
 /**
  *  @desc    Get User By Id
  *  @route   /api/users/:id
