@@ -34,6 +34,11 @@ module.exports.actualizarUsuario = asyncHandler(async (req, res) => {
   res.status(200).json(actualizarUsuario);
 });
 
+module.exports.test = asyncHandler(async (req, res) => {
+  const usuarios = await Usuario.find().select("-password");
+  res.status(200).json(usuarios);
+});
+
 /**
  *  @desc    Get All Users
  *  @route   /api/users
